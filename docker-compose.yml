@@ -1,0 +1,17 @@
+services:
+  quatt-sniffer:
+    build: .
+    container_name: quatt-sniffer
+    restart: unless-stopped
+    network_mode: host			# use 'host' if your broker is on the same docker platform
+    environment:
+      - DR164_IP=192.168.2.203		# Use a fixed IP adres
+      - DR164_PORT=8899
+      - QUATT_UNITS=1            	# 1 for Quatt Single, 2 for Quatt Duo
+      - PUBLISH_INTERVAL=5       	# MQTT-update interval in seconds
+      - MQTT_BROKER=127.0.0.1		# local , only if network_mode is 'host', otherwise your MQTT broker IP. 
+      - MQTT_PORT=1883			# default MQTT port
+      - MQTT_TOPIC_PREFIX=Quatt  	# Publish on Quatt/hp1 (and Quatt/hp2 for Duo)
+      - MQTT_USER=			# From your MQTT Broker
+      - MQTT_PASS=			# From your MQTT Broker
+      - RAW_LOG=true           		# Put on 'true' by first test to log raw input

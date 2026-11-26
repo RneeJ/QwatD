@@ -1,0 +1,690 @@
+{
+    "Quatt_HP1_Water_In_Temp": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Water_In_Temp",
+        "type": "80",
+        "subtype": "5",
+        "switchtype": "0",
+        "mapping": {
+            "item": "temp_water_in",
+            "digits": 1
+        }
+    },
+    "Quatt_HP1_Water_Out_Temp": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Water_Out_Temp",
+        "type": "80",
+        "subtype": "5",
+        "switchtype": "0",
+        "mapping": {
+            "item": "temp_water_out",
+            "digits": 1
+        }
+    },
+    "Quatt_HP1_Outside_Temp": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Outside_Temp",
+        "type": "80",
+        "subtype": "5",
+        "switchtype": "0",
+        "mapping": {
+            "item": "temp_outside",
+            "digits": 1
+        }
+    },
+    "Quatt_HP1_Evaporator_Coil_Temp": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Evaporator_Coil_Temp",
+        "type": "80",
+        "subtype": "5",
+        "switchtype": "0",
+        "mapping": {
+            "item": "temp_evaporator_coil",
+            "digits": 1
+        }
+    },
+    "Quatt_HP1_Condenser_Coil_Temp": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Condenser_Coil_Temp",
+        "type": "80",
+        "subtype": "5",
+        "switchtype": "0",
+        "mapping": {
+            "item": "temp_condenser_coil",
+            "digits": 1
+        }
+    },
+    "Quatt_HP1_Gas_Discharge_Temp": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Gas_Discharge_Temp",
+        "type": "80",
+        "subtype": "5",
+        "switchtype": "0",
+        "mapping": {
+            "item": "temp_gas_discharge",
+            "digits": 1
+        }
+    },
+    "Quatt_HP1_Gas_Return_Temp": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Gas_Return_Temp",
+        "type": "80",
+        "subtype": "5",
+        "switchtype": "0",
+        "mapping": {
+            "item": "temp_gas_return",
+            "digits": 1
+        }
+    },
+    "Quatt_HP1_Condensing_Temp": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Condensing_Temp",
+        "type": "80",
+        "subtype": "5",
+        "switchtype": "0",
+        "mapping": {
+            "item": "temp_condensing",
+            "digits": 1
+        }
+    },
+    "Quatt_HP1_Evaporating_Temp": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Evaporating_Temp",
+        "type": "80",
+        "subtype": "5",
+        "switchtype": "0",
+        "mapping": {
+            "item": "temp_evaporating",
+            "digits": 1
+        }
+    },
+    "Quatt_HP1_Pump_Flow": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Pump_Flow",
+        "type": "243",
+        "subtype": "30",
+        "switchtype": "0",
+        "mapping": {
+            "item": "pump_flow",
+            "digits": 1
+        }
+    },
+    "Quatt_HP1_Pump_Power": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Pump_Power",
+        "type": "248",
+        "subtype": "1",
+        "switchtype": "0",
+        "mapping": {
+            "item": "pump_power",
+            "digits": 0
+        }
+    },
+    "Quatt_HP1_Compressor_Freq_Actual": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Compressor_Freq_Actual",
+        "type": "243",
+        "subtype": "31",
+        "switchtype": "0",
+        "options": {
+            "Custom": "1;Hz"
+        },
+        "mapping": {
+            "item": "compressor_freq_actual",
+            "digits": 0
+        }
+    },
+    "Quatt_HP1_Compressor_Freq_Demand": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Compressor_Freq_Demand",
+        "type": "243",
+        "subtype": "31",
+        "switchtype": "0",
+        "options": {
+            "Custom": "1;Hz"
+        },
+        "mapping": {
+            "item": "compressor_freq_demand",
+            "digits": 0
+        }
+    },
+    "Quatt_HP1_Compressor_Current": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Compressor_Current",
+        "type": "243",
+        "subtype": "23",
+        "switchtype": "0",
+        "mapping": {
+            "item": "ac_current",
+            "digits": 1
+        }
+    },
+    "Quatt_HP1_Compressor_Voltage": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Compressor_Voltage",
+        "type": "243",
+        "subtype": "8",
+        "switchtype": "0",
+        "mapping": {
+            "item": "ac_voltage",
+            "digits": 0
+        }
+    },
+    "Quatt_HP1_Fan_Speed_Actual": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Fan_Speed_Actual",
+        "type": "243",
+        "subtype": "7",
+        "switchtype": "0",
+        "mapping": {
+            "item": "fan_speed_actual",
+            "digits": 0
+        }
+    },
+    "Quatt_HP1_EEV_Steps": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-EEV_Steps",
+        "type": "243",
+        "subtype": "31",
+        "switchtype": "0",
+        "options": {
+            "Custom": "1;stappen"
+        },
+        "mapping": {
+            "item": "eev_steps",
+            "digits": 0
+        }
+    },
+    "Quatt_HP1_Evaporator_Pressure": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Evaporator_Pressure",
+        "type": "243",
+        "subtype": "9",
+        "switchtype": "0",
+        "mapping": {
+            "item": "pressure_evaporator",
+            "digits": 1
+        }
+    },
+    "Quatt_HP1_Condenser_Pressure": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Condenser_Pressure",
+        "type": "243",
+        "subtype": "9",
+        "switchtype": "0",
+        "mapping": {
+            "item": "pressure_condenser",
+            "digits": 1
+        }
+    },
+    "Quatt_HP1_Working_Mode_Actual": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Working_Mode_Actual",
+        "type": "243",
+        "subtype": "31",
+        "switchtype": "0",
+        "options": {
+            "Custom": "1;modus"
+        },
+        "mapping": {
+            "item": "working_mode_actual",
+            "digits": 0
+        }
+    },
+    "Quatt_HP1_Working_Mode_Demand": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Working_Mode_Demand",
+        "type": "243",
+        "subtype": "31",
+        "switchtype": "0",
+        "options": {
+            "Custom": "1;modus"
+        },
+        "mapping": {
+            "item": "working_mode_demand",
+            "digits": 0
+        }
+    },
+    "Quatt_HP1_Defrost_Mode": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Defrost_Mode",
+        "type": "244",
+        "subtype": "73",
+        "switchtype": "0",
+        "mapping": {
+            "item": "defrost_mode"
+        },
+        "values": {
+            "0": "Off",
+            "1": "On"
+        }
+    },
+    "Quatt_HP1_Four_Way_Valve": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Four_Way_Valve",
+        "type": "244",
+        "subtype": "73",
+        "switchtype": "0",
+        "mapping": {
+            "item": "four_way_valve"
+        },
+        "values": {
+            "0": "Off",
+            "1": "On"
+        }
+    },
+    "Quatt_HP1_Pump_Relay": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Pump_Relay",
+        "type": "244",
+        "subtype": "73",
+        "switchtype": "0",
+        "mapping": {
+            "item": "pump_relay"
+        },
+        "values": {
+            "0": "Off",
+            "1": "On"
+        }
+    },
+    "Quatt_HP1_Bottom_Heater": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Bottom_Heater",
+        "type": "244",
+        "subtype": "73",
+        "switchtype": "0",
+        "mapping": {
+            "item": "bottom_heater"
+        },
+        "values": {
+            "0": "Off",
+            "1": "On"
+        }
+    },
+    "Quatt_HP1_Crankcase_Heater": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Crankcase_Heater",
+        "type": "244",
+        "subtype": "73",
+        "switchtype": "0",
+        "mapping": {
+            "item": "crankcase_heater"
+        },
+        "values": {
+            "0": "Off",
+            "1": "On"
+        }
+    },
+    "Quatt_HP1_Silent_Mode": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Silent_Mode",
+        "type": "244",
+        "subtype": "73",
+        "switchtype": "0",
+        "mapping": {
+            "item": "silent_mode"
+        },
+        "values": {
+            "0": "Off",
+            "1": "On"
+        }
+    },
+    "Quatt_HP1_Alarm_Flags": {
+        "topic": "Quatt/hp1",
+        "key": "Quatt_HP1-Alarm_Flags",
+        "type": "243",
+        "subtype": "31",
+        "switchtype": "0",
+        "options": {
+            "Custom": "1;code"
+        },
+        "mapping": {
+            "item": "alarm_flags",
+            "digits": 0
+        }
+    },
+    "Quatt_HP2_Water_In_Temp": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Water_In_Temp",
+        "type": "80",
+        "subtype": "5",
+        "switchtype": "0",
+        "mapping": {
+            "item": "temp_water_in",
+            "digits": 1
+        }
+    },
+    "Quatt_HP2_Water_Out_Temp": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Water_Out_Temp",
+        "type": "80",
+        "subtype": "5",
+        "switchtype": "0",
+        "mapping": {
+            "item": "temp_water_out",
+            "digits": 1
+        }
+    },
+    "Quatt_HP2_Outside_Temp": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Outside_Temp",
+        "type": "80",
+        "subtype": "5",
+        "switchtype": "0",
+        "mapping": {
+            "item": "temp_outside",
+            "digits": 1
+        }
+    },
+    "Quatt_HP2_Evaporator_Coil_Temp": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Evaporator_Coil_Temp",
+        "type": "80",
+        "subtype": "5",
+        "switchtype": "0",
+        "mapping": {
+            "item": "temp_evaporator_coil",
+            "digits": 1
+        }
+    },
+    "Quatt_HP2_Condenser_Coil_Temp": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Condenser_Coil_Temp",
+        "type": "80",
+        "subtype": "5",
+        "switchtype": "0",
+        "mapping": {
+            "item": "temp_condenser_coil",
+            "digits": 1
+        }
+    },
+    "Quatt_HP2_Gas_Discharge_Temp": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Gas_Discharge_Temp",
+        "type": "80",
+        "subtype": "5",
+        "switchtype": "0",
+        "mapping": {
+            "item": "temp_gas_discharge",
+            "digits": 1
+        }
+    },
+    "Quatt_HP2_Gas_Return_Temp": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Gas_Return_Temp",
+        "type": "80",
+        "subtype": "5",
+        "switchtype": "0",
+        "mapping": {
+            "item": "temp_gas_return",
+            "digits": 1
+        }
+    },
+    "Quatt_HP2_Condensing_Temp": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Condensing_Temp",
+        "type": "80",
+        "subtype": "5",
+        "switchtype": "0",
+        "mapping": {
+            "item": "temp_condensing",
+            "digits": 1
+        }
+    },
+    "Quatt_HP2_Evaporating_Temp": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Evaporating_Temp",
+        "type": "80",
+        "subtype": "5",
+        "switchtype": "0",
+        "mapping": {
+            "item": "temp_evaporating",
+            "digits": 1
+        }
+    },
+    "Quatt_HP2_Pump_Flow": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Pump_Flow",
+        "type": "243",
+        "subtype": "30",
+        "switchtype": "0",
+        "mapping": {
+            "item": "pump_flow",
+            "digits": 1
+        }
+    },
+    "Quatt_HP2_Pump_Power": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Pump_Power",
+        "type": "248",
+        "subtype": "1",
+        "switchtype": "0",
+        "mapping": {
+            "item": "pump_power",
+            "digits": 0
+        }
+    },
+    "Quatt_HP2_Compressor_Freq_Actual": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Compressor_Freq_Actual",
+        "type": "243",
+        "subtype": "31",
+        "switchtype": "0",
+        "options": {
+            "Custom": "1;Hz"
+        },
+        "mapping": {
+            "item": "compressor_freq_actual",
+            "digits": 0
+        }
+    },
+    "Quatt_HP2_Compressor_Freq_Demand": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Compressor_Freq_Demand",
+        "type": "243",
+        "subtype": "31",
+        "switchtype": "0",
+        "options": {
+            "Custom": "1;Hz"
+        },
+        "mapping": {
+            "item": "compressor_freq_demand",
+            "digits": 0
+        }
+    },
+    "Quatt_HP2_Compressor_Current": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Compressor_Current",
+        "type": "243",
+        "subtype": "23",
+        "switchtype": "0",
+        "mapping": {
+            "item": "ac_current",
+            "digits": 1
+        }
+    },
+    "Quatt_HP2_Compressor_Voltage": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Compressor_Voltage",
+        "type": "243",
+        "subtype": "8",
+        "switchtype": "0",
+        "mapping": {
+            "item": "ac_voltage",
+            "digits": 0
+        }
+    },
+    "Quatt_HP2_Fan_Speed_Actual": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Fan_Speed_Actual",
+        "type": "243",
+        "subtype": "7",
+        "switchtype": "0",
+        "mapping": {
+            "item": "fan_speed_actual",
+            "digits": 0
+        }
+    },
+    "Quatt_HP2_EEV_Steps": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-EEV_Steps",
+        "type": "243",
+        "subtype": "31",
+        "switchtype": "0",
+        "options": {
+            "Custom": "1;stappen"
+        },
+        "mapping": {
+            "item": "eev_steps",
+            "digits": 0
+        }
+    },
+    "Quatt_HP2_Evaporator_Pressure": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Evaporator_Pressure",
+        "type": "243",
+        "subtype": "9",
+        "switchtype": "0",
+        "mapping": {
+            "item": "pressure_evaporator",
+            "digits": 1
+        }
+    },
+    "Quatt_HP2_Condenser_Pressure": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Condenser_Pressure",
+        "type": "243",
+        "subtype": "9",
+        "switchtype": "0",
+        "mapping": {
+            "item": "pressure_condenser",
+            "digits": 1
+        }
+    },
+    "Quatt_HP2_Working_Mode_Actual": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Working_Mode_Actual",
+        "type": "243",
+        "subtype": "31",
+        "switchtype": "0",
+        "options": {
+            "Custom": "1;modus"
+        },
+        "mapping": {
+            "item": "working_mode_actual",
+            "digits": 0
+        }
+    },
+    "Quatt_HP2_Working_Mode_Demand": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Working_Mode_Demand",
+        "type": "243",
+        "subtype": "31",
+        "switchtype": "0",
+        "options": {
+            "Custom": "1;modus"
+        },
+        "mapping": {
+            "item": "working_mode_demand",
+            "digits": 0
+        }
+    },
+    "Quatt_HP2_Defrost_Mode": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Defrost_Mode",
+        "type": "244",
+        "subtype": "73",
+        "switchtype": "0",
+        "mapping": {
+            "item": "defrost_mode"
+        },
+        "values": {
+            "0": "Off",
+            "1": "On"
+        }
+    },
+    "Quatt_HP2_Four_Way_Valve": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Four_Way_Valve",
+        "type": "244",
+        "subtype": "73",
+        "switchtype": "0",
+        "mapping": {
+            "item": "four_way_valve"
+        },
+        "values": {
+            "0": "Off",
+            "1": "On"
+        }
+    },
+    "Quatt_HP2_Pump_Relay": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Pump_Relay",
+        "type": "244",
+        "subtype": "73",
+        "switchtype": "0",
+        "mapping": {
+            "item": "pump_relay"
+        },
+        "values": {
+            "0": "Off",
+            "1": "On"
+        }
+    },
+    "Quatt_HP2_Bottom_Heater": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Bottom_Heater",
+        "type": "244",
+        "subtype": "73",
+        "switchtype": "0",
+        "mapping": {
+            "item": "bottom_heater"
+        },
+        "values": {
+            "0": "Off",
+            "1": "On"
+        }
+    },
+    "Quatt_HP2_Crankcase_Heater": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Crankcase_Heater",
+        "type": "244",
+        "subtype": "73",
+        "switchtype": "0",
+        "mapping": {
+            "item": "crankcase_heater"
+        },
+        "values": {
+            "0": "Off",
+            "1": "On"
+        }
+    },
+    "Quatt_HP2_Silent_Mode": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Silent_Mode",
+        "type": "244",
+        "subtype": "73",
+        "switchtype": "0",
+        "mapping": {
+            "item": "silent_mode"
+        },
+        "values": {
+            "0": "Off",
+            "1": "On"
+        }
+    },
+    "Quatt_HP2_Alarm_Flags": {
+        "topic": "Quatt/hp2",
+        "key": "Quatt_HP2-Alarm_Flags",
+        "type": "243",
+        "subtype": "31",
+        "switchtype": "0",
+        "options": {
+            "Custom": "1;code"
+        },
+        "mapping": {
+            "item": "alarm_flags",
+            "digits": 0
+        }
+    }
+}
