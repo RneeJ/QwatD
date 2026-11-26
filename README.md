@@ -6,44 +6,54 @@ There is an excellent [Quatt plugin for Domoticz](https://github.com/galadril/Do
 WARNING : You need to know what you are doing because this solution connects to your heatpump on a hardware level !
 You use it on your own risk.
 
+Intended public : Advanced
+
 Thankx for inspiration : [OpenQuatt](https://github.com/OpenQuatt/OpenQuatt) and [Quatt-sniffer](https://github.com/M10tech/Quatt-sniffer)
 
-# Quatt Modbus Sniffer voor Domoticz (via USR-DR164 & Docker)
+# QwatD : Quatt Modbus Sniffer for Domoticz using USR-DR164 & Docker
 
-Een passieve (**100% read-only**) Modbus RTU-sniffer in Docker voor de **Quatt hybride warmtepomp** (zowel **Quatt Single** als **Quatt Duo**). De tool luistert mee op de RS485-verbinding tussen de Quatt CiC en de buitenunit(s) via een **PUSR USR-DR164** en publiceert alle meetwaarden als JSON naar MQTT voor directe uitlezing in **Domoticz** (via MQTTMapper).
+A passive (**100% read-only**) Modbus RTU sniffer running in Docker for the **Quatt hybrid heat pump** (both **Quatt Single** and **Quatt Duo** models). The tool monitors the RS485 connection between the Quatt CiC and the outdoor unit(s) via a **PUSR USR-DR164** device, publishing all measured values ​​as JSON to MQTT for direct integration into **Domoticz** (using MqttMapper).
 
-## 1. Veiligheid & Hardware-aansluiting (Read-Only)
+Prerequisites (install software if not present) :
+- [Docker](https://www.docker.com/) preferred for all
+- [Mosquito](https://mosquitto.org/)
+- Optional [MQTT Explorer](https://mqtt-explorer.com/)
+- [Domoticz](https://www.domoticz.com/)
+- plugin for Domoticz [MqttMapper](https://github.com/FlyingDomotic/domoticz-mqttmapper-plugin)
+- [PUSR USR-DR164](https://www.pusr.com/products/Serial-to-Dual-Band-WiFi-Converter.html)
 
-De Quatt CiC is de enige Modbus Master op de RS485-bus. Deze oplossing stuurt **nooit** bytes terug op de bus en vormt daarom geen enkel risico voor de werking van de warmtepomp.
+Steps to go after installed prerequisites :
 
-1. **Spanning uitschakelen:** Schakel zowel de Quatt buitenunit(s) als de CiC volledig spanningsloos voordat je de kabel aansluit.
-2. **Aftakkabel maken (Y-splitsing):**
-   * Maak een korte aftakking (**< 0,5 tot 1 meter**) met getwiste aders (bijv. UTP Cat5e of LiYCY) vanaf de RS485-verbinding tussen CiC en buitenunit naar de USR-DR164.
-   * Verbind **A op A**, **B op B** en **GND op GND** (bijv. met Wago 221-hendelklemmen).
-   * Plaats **geen** extra 120 Ω afsluitweerstand op de aftakking (de bus is al afgesloten in de CiC en buitenunit).
-3. **Voeding USR-DR164:** Gebruik een eigen 5V–24V DC adapter op de klemmenstrook van de DR164 zodat de CiC elektrisch niet wordt belast.
+## 1. Settings on the USR-DR164
+Configure the USR-DR164 via its web interface:
+* **Network:** Static IP address (e.g., `192.168.2.181`), Socket A set to **TCP Server**, port `8899`.
+* **Work Mode:** **Transparent Transmission** (do *not* enable Modbus Protocol Conversion).
+* **Serial Port:** `9600 baud`, `8 data bits`, `No parity`, `1 stop bit` (`9600 8N1`).
 
-## 2. Instellingen op de USR-DR164
+## 2. Safety & Hardware Connection (Read-Only)
+The Quatt CiC acts as the sole Modbus Master on the RS485 bus. This solution does not transmit onto the bus, ensuring there is absolutely no risk to the operation of the heat pump.
 
-Configureer de USR-DR164 via de webinterface:
-* **Netwerk:** Vast IP-adres (bijv. `192.168.2.181`), Socket A op **TCP Server**, poort `8899`.
-* **Work Mode:** **Transparent Transmission** (*geen* Modbus Protocol Conversion inschakelen).
-* **Seriële poort:** `9600 baud`, `8 databits`, `No parity`, `1 stopbit` (`9600 8N1`).
+1. **Power Down:** Completely disconnect power to both the Quatt outdoor unit(s) and the CiC before connecting any cables ! 
+2. **Create a Branch (Y-split):**
+   * Create a short branch connection (**< 0.5 to 1 meter**) using twisted-pair wiring (e.g., UTP Cat5e or LiYCY) from the RS485 line (between the CiC and the outdoor unit) to the USR-DR164.
+   * Connect **A to A**, **B to B**, and **GND to GND** (for example, using Wago 221 lever-operated connectors).
+   * Do **not** add an extra 120 Ω termination resistor to this branch (the bus is already terminated within the CiC and the outdoor unit).
+3. **Powering the USR-DR164:** Use a separate 5V–24V DC power adaptor connected to the DR164’s terminal block to ensure no electrical load is placed on the CiC.
 
-## 3. Docker-container starten
-
-Zet `quatt_sniffer.py`, `Dockerfile`, `requirements.txt` en `docker-compose.yml` in een map (bijv. `~/quatt-sniffer`), pas in `docker-compose.yml` het IP-adres (`DR164_IP`) en `QUATT_UNITS` (`1` voor Single, `2` voor Duo) aan en start de container:
+## 3. Starting the Docker container
+Place `quatt_sniffer.py`, `Dockerfile`, `requirements.txt`, and `docker-compose.yml` into a directory (e.g., `~/quatt-sniffer`). 
+In `docker-compose.yml`, adjust the IP address (`DR164_IP`) and `QUATT_UNITS` (`1` for Single, `2` for Duo), then start the container:
 
 ```bash
 docker compose up -d --build
 docker logs -f quatt-sniffer
 ```
 
-### Eerste controle & schaalfactoren verifiëren
-Zet in `docker-compose.yml` tijdelijk `RAW_LOG=true` om de ruwe Modbus-registers naast de berekende waarden in `docker logs` te zien en te vergelijken met de CiC (`http://<CIC-IP>:8080/beta/feed/data.json`). Zet `RAW_LOG=false` zodra alles klopt.
+### Initial check & verifying scaling factors
+Temporarily set `RAW_LOG=true` in `docker-compose.yml` to view the raw Modbus registers alongside the calculated values ​​in the `docker logs`. Compare these with the data from the CiC (`http://<CIC-IP>:8080/beta/feed/data.json`). Once everything is correct, set `RAW_LOG=false`.
 
-## 4. Domoticz koppelen (MQTTMapper)
+## 4. Connecting to Domoticz (MQTTMapper)
 
-1. Kopieer de inhoud van **`MqttMapper_Single.json`** (of **`MqttMapper_Duo.json`**) naar je `MqttMapper.json`-configuratiebestand.
-2. Zet in Domoticz onder **Instellingen → Systeem** tijdelijk *Nieuwe hardware/apparaten toestaan* aan en herstart de MQTTMapper-hardware.
-3. Alle sensoren (water aanvoer/retour, buitentemperatuur, flow, pompvermogen, compressorfrequentie, drukken, defrost- en klepstatussen) worden automatisch aangemaakt onder **Overige** en **Temperatuur**.
+1. Copy the contents of **`MqttMapper_Single.json`** (or **`MqttMapper_Duo.json`**) into your `MqttMapper.json` configuration file.
+2. In Domoticz, go to **Settings → System** and temporarily enable *Allow new hardware/devices*, then restart the MQTTMapper hardware.
+3. All sensors (water supply/return, outdoor temperature, flow, pump power, compressor frequency, pressures, defrost and valve statuses) will be created automatically under **Other** and **Temperature**.
