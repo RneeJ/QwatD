@@ -3,7 +3,7 @@
 # QwatD : Quatt Modbus Sniffer for Domoticz using USR-DR164 & Docker
 A passive (**read-only**) Modbus RTU sniffer running in Docker for the **Quatt hybrid heat pump** (both **Quatt Single** and **Quatt Duo** models). The tool monitors the RS485 connection between the Quatt CiC and the outdoor unit(s) via a **PUSR USR-DR164** device, publishing all measured values ​​as JSON to MQTT for direct integration into **Domoticz** (using MqttMapper).
 
-[So in short : the DR164 delivers Quatt data hassle free on your servers doorstep where this tool translates it to usable json and send it out by MQTT.](/hints/hints.md#how-the-passive-modbus-sniffer-works-as-of-november-2026)
+[Short : the DR164 delivers Quatt data hassle free on your servers doorstep where this tool translates it to usable json and send it out by MQTT.](/hints/hints.md#how-the-passive-modbus-sniffer-works-as-of-november-2026)
 
 For mainstream use there is an excellent [Quatt plugin for Domoticz](https://github.com/galadril/Domoticz-Quatt-Plugin), it is easy to install and the way to go ! 
 
