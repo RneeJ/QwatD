@@ -64,6 +64,9 @@ MqttMapper only reads the configuration file at startup of Domoticz ; so every c
 
 # Testing
 When testing with an other RS485 device you need the same communication parameters on the RS485 side as on the DR164 side!
+
 Run : `simulate_quatt.py`  after changing the DR134_IP adres !
+
+**Possible communication problems : port 8899 can be blocked/reserved by previous attempts. A complete restart of both tools helps.**
 
 <img width="260" height="402" alt="QwatD Test DR134 to DR164" src="https://github.com/user-attachments/assets/5c0815d3-fc8c-415d-a070-a74559c7ac2f" />
