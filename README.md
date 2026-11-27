@@ -16,7 +16,7 @@ Thankx for inspiration : [OpenQuatt](https://github.com/OpenQuatt/OpenQuatt) and
 
 # Prerequisites (install software if not present, buy DR164) :
 - [Docker](https://www.docker.com/) preferred for all
-- [Mosquito](https://mosquitto.org/)
+- [Mosquitto](https://mosquitto.org/)
 - Optional [MQTT Explorer](https://mqtt-explorer.com/)
 - [Domoticz](https://www.domoticz.com/)
 - plugin for Domoticz [MqttMapper](https://github.com/FlyingDomotic/domoticz-mqttmapper-plugin)
