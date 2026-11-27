@@ -28,7 +28,7 @@ Read the manual and configure the USR-DR164 via its web interface:
 * **Work Mode:** **Transparent Transmission** (do *not* enable Modbus Protocol Conversion).
 * **Serial Port:** `9600 baud`, `8 data bits`, `No parity`, `1 stop bit` (`9600 8N1`).
 
-`Todo : Hints for setup`
+[Hints for setup](/docs/hints.md)
 
 ## 2. Safety & Hardware Connection (Read-Only)
 The Quatt CiC acts as the sole Modbus Master on the RS485 bus. This solution does not transmit onto the bus, ensuring there is absolutely no risk to the operation of the heat pump.
@@ -40,7 +40,7 @@ The Quatt CiC acts as the sole Modbus Master on the RS485 bus. This solution doe
    * Do **not** add an extra 120 Ω termination resistor to this branch (the bus is already terminated within the CiC and the outdoor unit).
 3. **Powering the USR-DR164:** Use a separate 5V–24V DC power adaptor connected to the DR164’s terminal block to ensure no electrical load is placed on the CiC.
 
-`Todo : Hints for setup`
+[Hints for setup](/docs/hints.md)
 
 ## 3. Starting the Docker container
 Place `quatt_sniffer.py`, `Dockerfile`, `requirements.txt`, and `docker-compose.yml` into a directory (e.g., `~/quatt-sniffer`). 
@@ -59,7 +59,7 @@ Temporarily set `RAW_LOG=true` in `docker-compose.yml` to view the raw Modbus re
 2. In Domoticz, go to **Settings → System** and temporarily enable *Allow new hardware/devices*, then restart the MQTTMapper hardware.
 3. All sensors (water supply/return, outdoor temperature, flow, pump power, compressor frequency, pressures, defrost and valve statuses) will be created automatically under **Other** and **Temperature**.
 
-`Todo : Hints for setup`
+[Hints for setup](/docs/hints.md)
 
 # Testing
 Testing was done by using a connected Pusr-DR134 to send a dummy Quatt message from an included `simulate_quatt.py`.
