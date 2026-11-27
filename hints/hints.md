@@ -26,6 +26,8 @@ Linking requests to responses:
 ## 1. USR-DR164 
 You can buy the PUSR USR-164 at the PUSR store at Alie. You need the **RS485** lipstick.
 
+Use fixed IP adresses.
+
 IMPORTANT : be carefull with setting up the DR164. If you used it before use the "reload" function at the left side to erase old settings.
 Only one wrong setting can end up failing the process to work.
 
@@ -61,6 +63,7 @@ When copying **(appending !) into an existing `MqttMapper.json` you have to remo
 MqttMapper only reads the configuration file at startup of Domoticz ; so every change needs a restart of Domoticz.
 
 # Testing
-When testing with an other RS485 device you need the same communication parameters on the RS485 side as on the DR164 side.
+When testing with an other RS485 device you need the same communication parameters on the RS485 side as on the DR164 side!
+Run : `simulate_quatt.py`  after changing the DR134_IP adres !
 
 <img width="260" height="402" alt="QwatD Test DR134 to DR164" src="https://github.com/user-attachments/assets/5c0815d3-fc8c-415d-a070-a74559c7ac2f" />
