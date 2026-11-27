@@ -9,7 +9,7 @@ Linking requests to responses:
  - FC=03 Request (8 bytes long): The CiC requests N registers starting from address X (e.g., 2099, 2107, 2110, 2115, 2131, 2137) from Slave 1 or 2. The sniffer stores this information (slave_id, start_addr, reg_count).
  - FC=03 Response (5 + 2*N bytes long): The direct response from the corresponding slave, containing the N register values. The sniffer associates this with the previously stored start address and updates the corresponding values.
  - Throttled MQTT publication: The CiC polls 7 blocks every second. To avoid overwhelming Domoticz and the MQTT broker with 14 individual messages per second, the sniffer bundles all values ​​for each unit and publishes a single, complete JSON message per heat pump (HP) every 5 seconds (configurable via `PUBLISH_INTERVAL`).
- - Raw Debug mode (`RAW_LOG=true`): A built-in logging option that allows for the immediate inspection of raw decimal/hexadecimal values ​​upon initial connection, making it possible to verify the exact scaling factors (e.g., × 0.1 or × 0.01). Compare the to your Quatt API values and adjust if necessary.
+ - Raw Debug mode (`RAW_LOG=true`): A built-in logging option that allows for the immediate inspection of raw decimal/hexadecimal values ​​upon initial connection, making it possible to verify the exact scaling factors (e.g., × 0.1 or × 0.01). Compare these to your Quatt API values and adjust if necessary.
 
 
 | Registers	                  | number	         |About|
