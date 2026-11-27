@@ -51,7 +51,8 @@ Advise : Use a tool like Portainer to manage your docker environment.
 | `docker logs -f quatt-sniffer` | Gives info about the running status of the container|
 
 ## 4. MQTTMapper
-As mentioned before the python sniffer program only handles decoding. For ease of use the fine **`MqttMapper ** plugin of Domoticz is used. It handles the conversion of the MQTT messages (in json format) into Domoticz devices. 
+As mentioned before the python sniffer program only handles decoding. For ease of use the fine **MqttMapper** plugin of Domoticz is used. It handles the conversion of the MQTT messages (in json format) into Domoticz devices. 
+So also no need for programming that part myself.
 
 You can copy the lines from _Single or _Duo into your own `MqttMapper.json` configuration file in the `~/plugins/MqttMapper` directory of your Domoticz system.
 
@@ -62,4 +63,4 @@ MqttMapper only reads the configuration file at startup of Domoticz ; so every c
 # Testing
 When testing with an other RS485 device you need the same communication parameters on the RS485 side as on the DR164 side.
 
-<img width="260" height="402 alt="QwatD - Test DR134 - DR164" src="https://github.com/user-attachments/assets/5c0815d3-fc8c-415d-a070-a74559c7ac2f" />
+<img width="260" height="402" alt="QwatD Test DR134 to DR164" src="https://github.com/user-attachments/assets/5c0815d3-fc8c-415d-a070-a74559c7ac2f" />
