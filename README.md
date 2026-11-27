@@ -20,6 +20,8 @@ Thankx for inspiration : [OpenQuatt](https://github.com/OpenQuatt/OpenQuatt) and
 - plugin for Domoticz [MqttMapper](https://github.com/FlyingDomotic/domoticz-mqttmapper-plugin)
 - [PUSR USR-DR164](https://www.pusr.com/products/Serial-to-Dual-Band-WiFi-Converter.html)
 
+# [Read more about how this works](/hints/hints.md#how-the-passive-modbus-sniffer-works-as-of-november-2026)
+
 # Steps to go after installed prerequisites :
 
 ## 1. Settings on the USR-DR164 
@@ -28,7 +30,7 @@ Read the manual and configure the USR-DR164 via its web interface:
 * **Work Mode:** **Transparent Transmission** (do *not* enable Modbus Protocol Conversion).
 * **Serial Port:** `9600 baud`, `8 data bits`, `No parity`, `1 stop bit` (`9600 8N1`).
 
-[Hints for setup](/docs/hints.md)
+[Hints for setup](/hints/hints.md#1-usr-dr164)
 
 ## 2. Safety & Hardware Connection (Read-Only)
 The Quatt CiC acts as the sole Modbus Master on the RS485 bus. This solution does not transmit onto the bus, ensuring there is absolutely no risk to the operation of the heat pump.
@@ -40,7 +42,7 @@ The Quatt CiC acts as the sole Modbus Master on the RS485 bus. This solution doe
    * Do **not** add an extra 120 Ω termination resistor to this branch (the bus is already terminated within the CiC and the outdoor unit).
 3. **Powering the USR-DR164:** Use a separate 5V–24V DC power adaptor connected to the DR164’s terminal block to ensure no electrical load is placed on the CiC.
 
-[Hints for setup](/docs/hints.md)
+[Hints for setup](/hints/hints.md#2-connecting-to-the-cic)
 
 ## 3. Starting the Docker container
 Place `quatt_sniffer.py`, `Dockerfile`, `requirements.txt`, and `docker-compose.yml` into a directory (e.g., `~/quatt-sniffer`). 
@@ -53,15 +55,18 @@ docker logs -f quatt-sniffer
 ### Initial check & verifying scaling factors
 Temporarily set `RAW_LOG=true` in `docker-compose.yml` to view the raw Modbus registers alongside the calculated values ​​in the `docker logs`. Compare these with the data from the CiC (`http://<CIC-IP>:8080/beta/feed/data.json`). Once everything is correct, set `RAW_LOG=false`.
 
+[Hints for setup](/hints/hints.md#3-the-docker-container)
+
 ## 4. Connecting to Domoticz (MQTTMapper)
 
 1. Copy the contents of **`MqttMapper_Single.json`** (or **`MqttMapper_Duo.json`**) into your `MqttMapper.json` configuration file.
 2. In Domoticz, go to **Settings → System** and temporarily enable *Allow new hardware/devices*, then restart the MQTTMapper hardware.
 3. All sensors (water supply/return, outdoor temperature, flow, pump power, compressor frequency, pressures, defrost and valve statuses) will be created automatically under **Other** and **Temperature**.
 
-[Hints for setup](/docs/hints.md)
+[Hints for setup](/hints/hints.md#4-mqttmapper)
 
 # Testing
 Testing was done by using a connected Pusr-DR134 to send a dummy Quatt message from an included `simulate_quatt.py`.
 You can run this locally on your pc. (use : Visual Studio Code)
 
+[Hints for setup](/hints/hints.md#testing)
