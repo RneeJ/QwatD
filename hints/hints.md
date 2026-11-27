@@ -31,10 +31,11 @@ Use fixed IP adresses.
 IMPORTANT : be carefull with setting up the DR164. If you used it before use the "reload" function at the left side to erase old settings.
 Only one wrong setting can end up failing the process to work.
 
-<img width="188" height="134" alt="QwatD - DR164 Work mode" src="https://github.com/user-attachments/assets/bb882ea7-19e9-4775-982e-546f126e0f2d" />
-<img width="188" height="134" alt="QwatD - DR164 Sta Setting" src="https://github.com/user-attachments/assets/0c8ef484-44db-429a-9566-70434dfb182e" />
-<img width="188" height="134" alt="QwatD - DR164 Serial Setting" src="https://github.com/user-attachments/assets/b6cd9f41-61a8-40d0-9d71-4eba6ac5f853" />
-<img width="188" height="134" alt="QwatD - DR164 Net Setting" src="https://github.com/user-attachments/assets/4d18950a-8880-47ef-9b39-025af6e5678e" />
+Important setup pages of the DR164 :
+
+|Work mode | Sta setting | Serial setting | Net setting |
+|----------|-------------|----------------|-------------|
+|<img width="188" height="134" alt="QwatD - DR164 Work mode" src="https://github.com/user-attachments/assets/bb882ea7-19e9-4775-982e-546f126e0f2d" />|<img width="188" height="134" alt="QwatD - DR164 Sta Setting" src="https://github.com/user-attachments/assets/0c8ef484-44db-429a-9566-70434dfb182e" />|<img width="188" height="134" alt="QwatD - DR164 Serial Setting" src="https://github.com/user-attachments/assets/b6cd9f41-61a8-40d0-9d71-4eba6ac5f853" />|<img width="188" height="134" alt="QwatD - DR164 Net Setting" src="https://github.com/user-attachments/assets/4d18950a-8880-47ef-9b39-025af6e5678e" />|
 
 ## 2. Connecting to the CiC
 1. **Power Down:** Let your heatpump come to a halt by lowering the temperature. The heatpump should be completly off and outside temperature should be well above zero to prevent frost. Completely disconnect power both the Quatt outdoor unit(s) and the CiC before connecting any cables ! 
@@ -53,10 +54,9 @@ Advise : Use a tool like Portainer to manage your docker environment.
 | `docker logs -f quatt-sniffer` | Gives info about the running status of the container|
 
 ## 4. MQTTMapper
-As mentioned before the python sniffer program only handles decoding. For ease of use the fine **MqttMapper** plugin of Domoticz is used. It handles the conversion of the MQTT messages (in json format) into Domoticz devices. 
-So also no need for programming that part myself.
+As mentioned before the python sniffer program only handles decoding. For ease of use the fine [**MqttMapper**](https://github.com/FlyingDomotic/domoticz-mqttmapper-plugin) plugin of Domoticz is used. It handles the conversion of the MQTT messages (in json format) into Domoticz devices. MqttMapper creates the new devices on first run and updates its values. So also no need for programming that part myself. 
 
-You can copy the lines from _Single or _Duo into your own `MqttMapper.json` configuration file in the `~/plugins/MqttMapper` directory of your Domoticz system.
+You can copy the lines from .._Single or .._Duo into your own `MqttMapper.json` configuration file in the `~/plugins/MqttMapper` directory of your Domoticz system.
 
 When copying **(appending !) into an existing `MqttMapper.json` you have to remove the last } of the existing and the first { of the new lines, connect old and new by adding a ',' to the forelast } !**
 
