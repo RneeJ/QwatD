@@ -14,4 +14,4 @@ services:
       - MQTT_TOPIC_PREFIX=Quatt  	# Publish on Quatt/hp1 (and Quatt/hp2 for Duo)
       - MQTT_USER=			# From your MQTT Broker
       - MQTT_PASS=			# From your MQTT Broker
-      - RAW_LOG=true           		# Put on 'true' by first test to log raw input
+      - RAW_LOG=true           		# Put on 'true' by first test to log raw input , 'false' in production
