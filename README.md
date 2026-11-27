@@ -70,3 +70,9 @@ Testing was done by using a connected Pusr-DR134 to send a dummy Quatt message f
 You can run this locally on your pc. (use : Visual Studio Code)
 
 [Hints for setup](/hints/hints.md#testing)
+
+# Afterword
+- This tool can be used with **every** (Home Automation) program that can read from MQTT.
+- If you like you can develop your own graphical dashboards using what tool you like. 
+- The DR164 can be used with many other RS485 equipped hardware, other brand heatpumps etc.
+- But for the sniffer/decoding program you need more register information. 
